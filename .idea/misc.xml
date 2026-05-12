@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/RegisterLogin/pom.xml" />
         <option value="$PROJECT_DIR$/JPARelationships/College-1-1/pom.xml" />
         <option value="$PROJECT_DIR$/SpringAnnotations/pom.xml" />
+        <option value="$PROJECT_DIR$/JPARelationships/College-many-one/pom.xml" />
       </list>
     </option>
   </component>
