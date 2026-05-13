@@ -1,0 +1,9 @@
+package com.example.Many_One;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ManyOneApplicationTests {
+
+}
