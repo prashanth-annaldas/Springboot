@@ -10,25 +10,22 @@
         <module name="SpringBasic" />
         <module name="demo" />
       </profile>
-      <profile name="Annotation profile for College" enabled="true">
+      <profile name="Annotation profile for Many-Many" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="Many-Many" />
         <module name="College" />
-      </profile>
-      <profile name="Annotation profile for College-many-one" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="College (1)" />
+        <module name="Many-One" />
+        <module name="One-Many" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="College (1)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -37,6 +34,9 @@
       <module name="IOC" options="-parameters" />
       <module name="IOC.main" options="-parameters" />
       <module name="IOC.test" options="-parameters" />
+      <module name="Many-Many" options="-parameters" />
+      <module name="Many-One" options="-parameters" />
+      <module name="One-Many" options="-parameters" />
       <module name="SpringBasic" options="-parameters" />
       <module name="SpringBasic (1)" options="-parameters" />
       <module name="demo" options="-parameters" />

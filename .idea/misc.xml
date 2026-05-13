@@ -9,6 +9,10 @@
         <option value="$PROJECT_DIR$/JPARelationships/College-1-1/pom.xml" />
         <option value="$PROJECT_DIR$/SpringAnnotations/pom.xml" />
         <option value="$PROJECT_DIR$/JPARelationships/College-many-one/pom.xml" />
+        <option value="$PROJECT_DIR$/JPARelationships/Many-One/pom.xml" />
+        <option value="$PROJECT_DIR$/JPARelationships/One-Many/pom.xml" />
+        <option value="$PROJECT_DIR$/JPARelationships/One-One/pom.xml" />
+        <option value="$PROJECT_DIR$/JPARelationships/Many-Many/pom.xml" />
       </list>
     </option>
   </component>
