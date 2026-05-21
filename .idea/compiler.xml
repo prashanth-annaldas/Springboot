@@ -10,7 +10,7 @@
         <module name="SpringBasic" />
         <module name="demo" />
       </profile>
-      <profile name="Annotation profile for Many-Many" enabled="true">
+      <profile name="Annotation profile for JWT" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,6 +21,7 @@
         <module name="College" />
         <module name="Many-One" />
         <module name="One-Many" />
+        <module name="JWT" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +35,7 @@
       <module name="IOC" options="-parameters" />
       <module name="IOC.main" options="-parameters" />
       <module name="IOC.test" options="-parameters" />
+      <module name="JWT" options="-parameters" />
       <module name="Many-Many" options="-parameters" />
       <module name="Many-One" options="-parameters" />
       <module name="One-Many" options="-parameters" />

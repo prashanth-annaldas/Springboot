@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/JPARelationships/One-Many/pom.xml" />
         <option value="$PROJECT_DIR$/JPARelationships/One-One/pom.xml" />
         <option value="$PROJECT_DIR$/JPARelationships/Many-Many/pom.xml" />
+        <option value="$PROJECT_DIR$/JWT/pom.xml" />
       </list>
     </option>
   </component>
