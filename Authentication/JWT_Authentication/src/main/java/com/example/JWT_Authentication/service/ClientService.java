@@ -41,7 +41,7 @@ public class ClientService {
                 .getBody();
     }
 
-    public String extractByUsername(String username){
-        return extractAllClaims(username).getSubject();
+    public String extractByUsername(String token){
+        return extractAllClaims(token).getSubject();
     }
 }
