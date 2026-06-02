@@ -1,17 +1,27 @@
 package com.example.StudentManagementSystem_Backend.DTO;
 
-public class FacultyDTO {
+public class FacultyRequestDTO {
     private String name;
     private String email;
-    private String department;
-    private String facultyId;
+    private String password;
 
-    public String getFacultyId() {
-        return facultyId;
+    public String getPassword() {
+        return password;
     }
 
-    public void setFacultyId(String facultyId) {
-        this.facultyId = facultyId;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String department;
+    private String employeeId;
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
     public String getDepartment() {

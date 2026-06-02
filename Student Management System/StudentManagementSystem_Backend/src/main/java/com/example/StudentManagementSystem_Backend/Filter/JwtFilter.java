@@ -1,26 +1,77 @@
 package com.example.StudentManagementSystem_Backend.Filter;
 
+import com.example.StudentManagementSystem_Backend.security.JwtUtil;
 import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import java.io.IOException;
+import java.util.List;
+
 @Component
 public class JwtFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private JwtUtil jwtUtil;
+
+
     @Override
-    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain filterChain){
+    protected void doFilterInternal(
+            HttpServletRequest req,
+            HttpServletResponse res,
+            FilterChain filterChain
+    ) throws ServletException, IOException {
+
         String token = null;
+
         Cookie[] cookies = req.getCookies();
+
         if(cookies != null){
+
             for(Cookie cookie : cookies){
-                if(cookie.equals("jwt")){
+
+                if(cookie.getName().equals("jwt")){
+
                     token = cookie.getValue();
+
                     break;
                 }
             }
         }
-        if(token != null && )
+
+        if(token != null){
+            if(jwtUtil.validateToken(token)){
+
+                String email =
+                        jwtUtil.extractByEmail(token);
+
+                String role =
+                        jwtUtil.extractRoleByToken(token);
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(
+                                email,
+                                null,
+                                List.of(
+                                        new SimpleGrantedAuthority(
+                                                "ROLE_" + role
+                                        )
+                                )
+                        );
+
+                SecurityContextHolder
+                        .getContext()
+                        .setAuthentication(authentication);
+            }
+        }
+
+        filterChain.doFilter(req, res);
     }
 }

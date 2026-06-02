@@ -1,6 +1,6 @@
 package com.example.StudentManagementSystem_Backend.DTO;
 
-public class CourseDTO {
+public class CourseRequestDTO {
     private String courseName;
     private Long facultyId;
 
